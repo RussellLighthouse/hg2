@@ -1,0 +1,120 @@
+html, body { min-height: 100%; }
+html {  }
+body { background: white; }
+
+* {
+	transition: color $trans-quick ease;
+}
+
+a {
+	transition: background $trans-quick ease;
+}
+
+img {
+	max-width: 100%; height: auto;
+}
+
+.clearfix {
+	@include clearfix();
+}
+
+.container {
+	position: relative;
+	width: #{(100%-($gutter*2))}; margin: 0 auto; max-width: 1200px;
+	
+	&.all {
+		padding: $jump/2 0 $jump*2; 
+		
+		@media #{$b-900} {
+			padding: $jump*2 0 $jump*3;
+		}
+	}
+	
+	&.larger {
+		max-width: 1350px;
+	}
+	
+	&.spark {
+		@media #{$b-900} {
+			background: url('../images/spark.svg') 10% 0 no-repeat; background-size: 40% auto;
+		}
+	}
+}
+
+.content {
+	margin: 0 0 $jump*2;
+}
+
+.button {
+	display: block; margin: 0 auto; max-width: 572px;
+	@include sub-text(); color: $white;  line-height: 2.6; text-shadow: 0 1px 0 $link-hover; text-align: center;
+	background: $link; border-color: $link-hover; cursor: pointer;
+	
+	&:hover, &:focus {
+		color: white;
+		background-color: $link-hover;
+	}
+	
+	@media (min-width: 900px) {
+		 line-height: 2.3; font-size: 15px;
+	}
+}
+
+.share, .discover, .sidebar-comments {
+	margin: 0 0 $jump;
+	@include clearfix();
+	
+	.title {
+		margin: 0 0 9px;
+		@include sub-text(); color: #cbcbc1;
+	}
+	
+	li {
+		float: left; 
+		list-style-type: none;
+		
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.share {
+	li {
+		width: 21px; margin: 0 7px 0 0;
+	}
+}
+
+.social-links {
+	margin: 0 0 $jump;
+	@include clearfix();
+	
+	li {
+		float: left; margin: 0 $gutter 0 0;
+		font-size: 18px; list-style-type: none;
+		
+		a {
+			color: #656565;
+		}
+		
+		&.twitter {
+			a {
+				color: #299aca;
+			}
+		}
+	
+	}
+	
+	.icon { width: 13px; height: auto; @include middle-align(); }
+	}
+
+.download-app {
+	padding: 8px $gutter 8px 30px;
+	height: 31px;
+	background: url('../images/icons/apple-logo.svg') 10px center no-repeat; background-size: 13px auto; border: 1px solid $grey-light-4;
+	font: 15px/1 $fontwhitman; color: $grey-med-2;
+	
+	&:hover, &:focus {
+		background-color: $yellow-1;
+	}
+}

@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Whitman';
+  src: url('../fonts/whitman/bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/whitman/bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/whitman/bold.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/whitman/bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/whitman/bold.svg#b99bbee3f4b578351c94beeded30589e') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  bold;
+}
+
+@font-face {
+  font-family: 'Whitman';
+  src: url('../fonts/whitman/italic.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/whitman/italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/whitman/italic.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/whitman/italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/whitman/italic.svg#02b694493079cb658f12941518873fae') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  normal;
+}
+
+@font-face {
+  font-family: 'Whitman';
+  src: url('../fonts/whitman/regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/whitman/regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/whitman/regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/whitman/regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/whitman/regular.svg#4496937ec8fc87a6d0b245a298ef6e82') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  normal;
+}

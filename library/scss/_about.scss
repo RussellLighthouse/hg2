@@ -1,0 +1,129 @@
+.about {
+	
+	.page-title {
+		
+		a {
+		}
+	}
+	
+	.team-list {
+		@include clearfix();
+		
+		.person {
+			max-width: 580px;
+		}
+	}
+	
+	.person {
+		margin: 0 0 $jump; padding: 0 0 $jump;
+		list-style-type: none;
+		border-bottom: 1px solid $grey-light-3;
+	}
+	
+	.person-photo {
+		float: right; width: 60px; height: 60px; margin: 0 0 20px 20px;
+		border-radius: 2px;
+	}
+	
+	.person-name {
+		a {
+			color: $text;
+			
+			&:hover, &:focus {
+				color: $link-hover;
+			}
+		}
+	}
+	
+	.person-title, .person-location {
+		margin: $jump*.25 0 $jump/2;
+		@include sub-text();
+	}
+	
+	.person-location {
+		color: #66605f;
+	}
+	
+	.button {
+		display: block;
+	}
+	
+	&.profile {
+		
+		.person {
+			border-bottom: none;
+		}
+		
+		.page-title {
+			margin: 0 0 $jump;
+		}
+		
+		.social-links {
+			li {
+				float: none;
+			}
+		}
+
+		@media (min-width: 600px) {
+			.page-title {
+				margin: 0 0 $jump*2;
+			}
+			
+			.details-bio {
+				max-width: 1050px;
+				@include clearfix();
+			}
+			
+			.details {
+				float: left; clear: left; width: 32%; padding-right: 10%;
+				
+				.person-photo {
+					float: none; display: block; width: 110px; height: auto; margin: 0 0 $jump;
+				}
+				
+				.person-title, .person-location {
+					font-size: 15px;
+				}
+			}
+			
+			.posts-feed {
+				.post-thumb {
+					transform: none;
+				}
+			}
+		}
+	}
+	
+	@media #{$g5-b1} {
+		
+		.page-title-sub {
+			margin-top: $jump*2;
+		}
+		
+		.our-team {
+			.person-photo {
+				float: left; margin: 0 20px 20px 0;
+			}
+			
+			.person-description {
+				clear: both;
+			}
+		}
+		
+		.writers-bloggers {
+			.person {
+				border-bottom: none;
+			}
+			
+			.person-photo {
+				float: left; width: 12%; height: auto;
+			}
+			
+			.person-name, .person-title, .person-location, .person-description {
+				float: right; width: 80%;
+				clear: right;
+			}
+		}
+		
+	}
+}

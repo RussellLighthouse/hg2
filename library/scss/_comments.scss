@@ -1,0 +1,121 @@
+.comment-count {
+		cursor: default;
+		
+		.count {
+			display: inline-block; margin: 0 $gutter-px 0 0; width: 26px; height: 24px;
+			background: url('../images/icons/comment-count.svg') no-repeat; background-size: cover;
+			text-align: center; color: $white; font-size: 12px; line-height: 1.9;
+			vertical-align: middle;
+		}
+	}
+
+.comments {
+	margin: 0 0 $jump*2;
+	padding: $jump 0 0;
+	border-top: 1px solid $grey-light-3;
+	
+	.comment-count {
+		margin: $jump*.75 0 $jump*1.75;
+	}
+	
+	* + * {
+		margin: 0 0 $jump*.75;
+	}
+	
+	input, select, textarea {
+		display: block; width: 100%; padding: 6px;
+	}
+	
+	#comments {
+		display: none;
+		/*
+		//
+		THIS CODE SHOULD BE REMOVED WITH PHP
+		//
+		*/
+	}
+	
+	.commentlist {
+		
+		> li {
+			margin: 0 0 $jump;
+			border-bottom: 1px solid $grey-light-3;
+		}
+		
+		li {
+			list-style-type: none;
+			
+			li {
+				margin-left: $gutter; padding: $gutter-px;				
+				background: rgba($grey-light-4, .3);
+				
+				.comment-author {
+					font-size: 17px;
+				}
+				
+				.avatar {
+					width: 39px; height: auto;
+				}
+			}
+		}
+		
+		.comment-meta {
+			@include sub-text();
+			
+			a {
+				color: inherit;
+			}
+		}
+		
+		.comment-author {
+			font-size: 22px; font-style: none;
+			
+			.says {
+				display: none;
+				/*
+				//
+				THIS CODE SHOULD BE REMOVED WITH PHP
+				//
+				*/
+			}
+			
+			cite {
+				font-style: none;
+			}
+		}
+		
+		.avatar {
+			float: left; margin: 0 $gutter-px $gutter-px 0; width: 50px; height: auto;
+		}
+	}
+	
+	input, textarea {
+		font: inherit; font-style: italic; color: #c8c8bf;
+		background: $grey-light-1; border: 1px solid #c8c8bf;
+		border-radius: 2px;
+		transition: background $trans-quick ease, color $trans-quick ease;
+		
+		&:hover {
+			
+		}
+		
+		&:focus {
+			color: $grey-med-2;
+		}
+	}
+	
+	textarea {
+		line-height: 1.4;
+		height: 110px;
+	}
+	
+	input[type="submit"] {
+		@include sub-text(); color: $white; background: $link; border-color: $link-hover;
+		line-height: 1.7; text-shadow: 0 1px 0 $link-hover;
+		cursor: pointer;
+		
+		&:hover, &:focus {
+			background-color: $link-hover;
+		}
+	}
+}

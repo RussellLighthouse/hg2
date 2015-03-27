@@ -1,0 +1,229 @@
+.header {
+	margin: 0 0 $jump;
+	border-bottom: 1px solid $grey-light-2;
+	@include box-shadow1();
+	
+	.page-destinations & {
+		margin-bottom: 0;
+	}
+	
+	.container {
+		padding: 8px 0 $jump/2;
+	}
+	
+	@media #{$g4-b2} {
+		height: 60px;
+	}
+	
+	.the-hedonist {
+		display: none;
+		letter-spacing: normal;
+	}
+	
+	
+	.single-post & {
+		.the-hedonist {
+			display: inline;
+			
+			@media #{$g4-b1} {
+				display: none;
+			}
+		}
+	}
+	
+	a {
+		color: $text;
+	}
+	
+	
+	.logo {
+		margin: $jump/5 0 $jump*.75;
+		letter-spacing: .07em; text-align: center;
+		
+		a {
+			display: inline-block;
+			
+			&:hover, &:focus {
+				color: $link;
+			}
+		}
+		
+		@media #{$g4-b1} {
+			margin-bottom: 0;
+			margin-top: 11px;
+			font-size: 37px; line-height: 1; text-align: left;
+		}
+		
+		@media #{$g4-b2} {
+			font-size: 24px; line-height: 1;
+		}
+	}
+	
+	.menu {
+		display: table; width: 100%; margin: 0 0 $jump*.85;
+		
+		
+		li {
+			display: table-cell;
+			list-style-type: none;
+			@include head-text();
+			
+			&:first-of-type {
+				text-align: left;
+			}
+			
+			&:last-of-type {
+				text-align: right;
+			}
+			
+			a {
+				&:hover, &:focus {
+					color: $link;
+				}
+			}
+			
+			&.current-menu-item, &.current_page_item {
+				a {
+					color: $grey-med-1;
+				}
+			}
+			
+			&.is-open {
+				a {
+					color: $link;
+				}
+			}
+			
+			&:after {
+				display: none; 
+			}
+			
+		
+			
+		}
+		
+		@media #{$g4-b1} {
+			margin-top: $jump/2; margin-bottom: $jump/2;
+		}
+		
+		@media #{$g4-b2} {
+			margin-top: 15px;
+		}
+		
+		@media #{$g4-b4} {
+			margin-top: 8px;
+			text-align: center;
+			
+			li {
+				display: inline-block;
+				
+				&:after {
+					display: inline-block; margin: 0 11px 0 15px;
+					content: "/";
+					font: inherit; font-weight: normal; color: #e3e3de;
+					cursor: default;
+				}
+				
+				&:last-of-type {
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	
+	.search-form {
+	
+		input {
+			display: block; width: 100%; padding: 6px;
+			font: bold 12px/1 $fontbrandon; font-style: italic; text-transform: uppercase; color: #c8c8bf;
+			background: $grey-light-1; border: none;
+			
+			&:hover {
+				
+			}
+			
+			&:focus {
+				color: $grey-med-2;
+			}
+		}
+		
+		@media #{$g4-b2} {
+			margin-top: 9px;
+		}
+		
+		@media #{$g4-b3} {
+			margin-top: 11px;
+		}
+	}
+	
+	/* only when in the header, not the page */
+	.destinations-menu {
+		position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: -10; max-height: 100%; overflow-y: auto;
+		height: 0;
+		opacity: 0;
+		
+		.close-menu {
+			position: absolute; top: $gutter-px/2; right: $gutter-px/2; z-index: 1;
+			padding: 12px;
+			cursor: pointer;
+		}
+		
+		ul {
+			li {
+				ul {
+					display: none;
+				}
+			}
+		}
+		
+		@media #{$dm-b3} { /* bring in the map and inline the continents */
+			
+			> ul {
+				position: absolute; top: 5%; left: 0;
+				
+				> li {
+					
+					ul {
+						top: 205%;
+					}
+				}
+			}
+		}
+		
+		@media #{$dm-b2} { /* tall enough to show header */
+			top: 90px;
+			
+			.close-menu {
+				display: none;
+			}
+		}
+		
+		@media #{$dm-b2} and #{$g4-b1} { /* when header changes height */
+			top: 74px;
+		}
+		
+		@media #{$dm-b2} and #{$g4-b2} { /* when header changes height, again */
+			top: 60px;			
+		}
+	}
+}
+
+$placeholdercolour: #babab2;
+
+::-webkit-input-placeholder {
+color: $placeholdercolour;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+color: $placeholdercolour;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+color: $placeholdercolour;  
+}
+
+:-ms-input-placeholder {  
+color: $placeholdercolour; 
+}

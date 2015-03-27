@@ -1,0 +1,298 @@
+.single-post {
+	
+	.page-title {
+		display: none; margin-left: auto; margin-right: auto; width: auto;
+		text-align: center; text-decoration: underline;
+		border-bottom: none;
+		
+		@media #{$g4-b1} {
+			display: block;
+		}
+		
+		@media (min-width: 950px) {
+			margin: 0 auto $jump*2;
+		}
+	}
+	
+}
+
+.hedonist-menu-download-app {
+	margin: 0 0 $jump;
+}
+
+.post-categories {
+	margin: 0 0 $jump/2;
+	/* border-bottom: 1px solid $grey-light-4; */
+		
+	li {
+		display: inline-block;
+		@include sub-text(); font-size: 14px;
+		
+		a {
+			display: block;
+			color: $grey-med-1;
+			
+			&:after {
+				display: inline-block;  margin: 0 10px 0;
+				content: "/";
+				font: inherit; color: $grey-med-1;
+			}
+			
+			&:hover, &:focus {
+				color: $link;
+			}
+		}
+		
+		&:last-of-type {
+			
+			a {
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+	
+	.discover & {
+		@include clearfix();
+		margin-top: 11px;
+		border-bottom: none;
+	}
+}
+
+.post-title {
+	margin: 0 0 $jump; padding: 0 0 $jump;
+	border-bottom: 1px solid $grey-light-4;
+	
+	@media (min-width: 950px) {
+		padding-bottom: 0;
+		border-bottom: none;
+	}
+}
+
+.post-meta {
+	margin: 0 0 $jump;
+	white-space: nowrap;
+	
+	a {
+		color: $link;
+	}
+	
+	.post-meta-title {
+		@include sub-text(); color: $grey-light-4;
+	}
+	
+	.post-meta-value {
+		margin: 0 0 $jump/2;
+		color: $grey-med-2;
+	}
+	
+	@media #{$g1-b1} {
+		.post-meta-title, .post-meta-value {
+			display: inline-block;
+		}
+		
+		.post-meta-title {
+			margin: 0 $gutter 0 0;
+		}
+		
+		.post-meta-value {
+			font-size: 18px;
+		}
+	}
+}
+
+.post-content {
+	margin: 0 0 $jump*2;
+	padding: 0 0 $jump;
+	border-bottom: 1px solid $grey-light-3;
+}
+
+.wp-caption {
+	position: relative;
+	
+	.copyright {
+		font-size: 12px; text-align: center; color: $grey-med-2; white-space: nowrap;
+		overflow: hidden;
+		
+		@media (min-width: 600px) {
+			position: absolute; top: 0; right: 0;
+			padding: 4px 6px 4px 10px;
+			background: $white;
+			font-size: 13px; color: $text;
+			border-radius: 0 0 0 4px;
+		}
+		
+		@media (min-width: 900px) {
+			.value {
+				display: none;
+			}
+		}
+	}
+	
+	&:hover, &:focus {
+		.copyright {
+			.value {
+				display: inline;
+			}
+		}
+	}
+	
+	img {
+		display: block; width: 100%;
+		
+		&:after {
+			display: block; position: absolute; top: 0; left: 0; z-index: 100;
+			content: "attr(title)";
+			width: 200px;
+			height: 200px;
+			background: red; color: white;
+		}
+	}
+	
+	.wp-caption-text {
+		font-size: 13px; text-align: center;
+		
+		@media (min-width: 600px) {
+			position: absolute; bottom: 0; right: 0;
+			padding: 4px 6px 4px 10px;
+			background: rgba(#000, .7);
+			font-size: 14px; color: $white;
+			border-radius: 4px 0 0 0;
+		}
+	}
+}
+
+.post-sidebar {
+	text-align: right;
+	
+	.share, .sidebar-comments {
+		li {
+			float: right;
+		}
+	}
+	
+	hr {
+		margin: $jump*2 0; border-color: $grey-light-3;
+	}
+	
+	.download-app {
+		display: inline-block;
+	}
+	
+	.sponsor, .discover-destination {
+		position: relative;
+		width: 100%; height: 0; padding-bottom: 82.96943231441%;
+	}
+	
+	.discover-destination {
+		margin: $jump 0;
+		@include gradient-background();
+		
+		.title {
+			position: absolute; top: 50%; left: 50%; z-index: 1;
+			transform: translate(-50%, -50%);
+			font: bold italic 15px/1 $fontbrandon; text-align: center; text-transform: uppercase;
+			
+			a {
+				color: #d7a3d2;
+				
+				.hg2 {
+					display: block; margin: 1px 0 5px;
+					font: normal 38px $fontwhitman; color: $white; text-transform: none;
+				}
+				
+				.destination {
+					color: $white;
+				}
+			}
+		}
+		
+		.post-thumb {
+			position: absolute; top: 0; left: 0;
+			width: 100%; height: 100%;
+		}
+		
+		&:hover, &:focus {
+			@include text-shadow1();
+		}
+	}
+	
+	.sponsor {
+		background: #545454;
+	}
+	
+	.related-posts {
+		border: none;
+		margin: 0; padding: 0;
+		text-align: left;
+	}
+	 
+	 .related-posts-title {
+		 font-size: 22px;
+	 }
+	 
+	 .posts-feed {
+		 .post {
+			 .title {
+				 font-size: 14px;
+			 }
+		 }
+	 }
+	
+}
+
+.author {
+	margin: 0 0 $jump*2;
+	
+	.title {
+		@include sub-text(); color: #cbcbc1;	
+	}
+	
+	.author-title {
+		margin: 0 0 $jump/2;
+		font-size: 22px;
+		
+		a {
+			color: $text;
+		}
+	}
+	
+	.author-avatar {
+		float: left; width: 56px; margin: 4px $gutter-px 0 0;
+		
+		a {
+			display: block;
+		}
+		
+		img {
+			width: 100%; height: auto;
+		}
+	}
+	
+	.author-view {
+		color: $link;
+	}
+	
+	@media #{$g2-b1} {
+		.author-avatar {
+			margin: -7px $gutter $gutter-px 0;			
+		}
+	}
+}
+
+
+
+.posts-feed.grid7 {
+	@media #{$g7-b1} {
+		.post {
+			padding-bottom: ($posts-normal/100%) * 49%;
+		}
+	}
+	
+	@media #{$g7-b2} {
+		.post {
+			padding-bottom: ($posts-normal/100%) * 31.3%;
+		}
+	}
+}

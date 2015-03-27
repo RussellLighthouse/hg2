@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Whitman';
+  src: url("bold.eot");
+  /* IE9 Compat Modes */
+  src: url("bold.eot?#iefix") format("embedded-opentype"), url("bold.woff") format("woff"), url("bold.ttf") format("truetype"), url("bold.svg#b99bbee3f4b578351c94beeded30589e") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: bold; }
+@font-face {
+  font-family: 'Whitman';
+  src: url("italic.eot");
+  /* IE9 Compat Modes */
+  src: url("italic.eot?#iefix") format("embedded-opentype"), url("italic.woff") format("woff"), url("italic.ttf") format("truetype"), url("italic.svg#02b694493079cb658f12941518873fae") format("svg");
+  /* Legacy iOS */
+  font-style: italic;
+  font-weight: normal; }
+@font-face {
+  font-family: 'Whitman';
+  src: url("whitman-romanlf.eot");
+  /* IE9 Compat Modes */
+  src: url("whitman-romanlf.eot?#iefix") format("embedded-opentype"), url("whitman-romanlf.woff") format("woff"), url("whitman-romanlf.ttf") format("truetype"), url("whitman-romanlf.svg#4496937ec8fc87a6d0b245a298ef6e82") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal; }

@@ -1,0 +1,392 @@
+/* colours
+*/
+/* spacing
+*/
+/* breakpoints
+*/
+/* posts-feed sizes
+*/
+/* shadows
+*/
+/* backgrounds
+*/
+/* media queries
+*/
+/* @mixin show-larger-800 {
+	@media only screen and (max-width: 799px) {
+		display: none;
+	}
+} */
+/* styles
+*/
+/* transitions
+*/
+/*********************
+*********************/
+.col {
+  float: left; }
+
+/* grid1
+*/
+.grid1:after {
+  content: "";
+  display: table;
+  clear: both; }
+.grid1 > .col {
+  width: 49%;
+  margin-right: 2%; }
+  .grid1 > .col:nth-of-type(2n) {
+    margin-right: 0; }
+@media (min-width: 620px) {
+  .grid1 > .col {
+    float: none;
+    display: inline-block;
+    width: auto;
+    margin-right: 2%; }
+    .grid1 > .col:nth-of-type(2n) {
+      margin-right: 0; } }
+
+/* grid2
+*/
+.grid2:after {
+  content: "";
+  display: table;
+  clear: both; }
+.grid2 > .col {
+  width: 50%; }
+  .grid2 > .col.col3 {
+    float: none;
+    clear: both;
+    width: 100%; }
+@media (min-width: 700px) {
+  .grid2 > .col.col1, .grid2 > .col.col2 {
+    float: right;
+    width: 30%;
+    clear: right; }
+  .grid2 > .col.col3 {
+    float: none;
+    clear: none;
+    width: 60%; } }
+
+/* grid3
+*/
+.grid3:after {
+  content: "";
+  display: table;
+  clear: both; }
+.grid3 > .col1 {
+  width: 58%; }
+.grid3 > .col2 {
+  float: right;
+  width: 40%; }
+@media (min-width: 950px) {
+  .grid3 > .col1 {
+    width: 100%; }
+  .grid3 > .col2 {
+    display: none; } }
+
+/* grid4
+*/
+.grid4:after {
+  content: "";
+  display: table;
+  clear: both; }
+@media (min-width: 480px) {
+  .grid4 > .col1 {
+    float: left;
+    width: 20%; }
+  .grid4 > .col2 {
+    float: right;
+    width: 80%; }
+  .grid4 > .col3 {
+    float: right;
+    width: 80%; } }
+@media (min-width: 690px) {
+  .grid4 > .col1 {
+    float: left;
+    width: 10%;
+    margin-right: 10%; }
+  .grid4 > .col2 {
+    float: left;
+    width: 50%;
+    margin-right: 10%; }
+  .grid4 > .col3 {
+    float: right;
+    width: 20%; } }
+@media (min-width: 1020px) {
+  .grid4 > .col1 {
+    float: left;
+    width: 10%;
+    margin-right: 10%; }
+  .grid4 > .col2 {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    float: none;
+    width: 40%;
+    margin-right: 0; }
+  .grid4 > .col3 {
+    float: right;
+    width: 15.6%; } }
+
+/* grid5
+*/
+.grid5:after {
+  content: "";
+  display: table;
+  clear: both; }
+.grid5 > .col {
+  float: none; }
+@media (min-width: 800px) {
+  .grid5 > .col {
+    float: left;
+    width: 48%;
+    margin-right: 4%; }
+    .grid5 > .col:nth-of-type(even) {
+      margin-right: 0; } }
+
+/* grid6
+*/
+.grid6:after {
+  content: "";
+  display: table;
+  clear: both; }
+.grid6 > .col {
+  float: none; }
+@media (min-width: 800px) {
+  .grid6 > .col {
+    float: left;
+    width: 31%;
+    margin-right: 2%; }
+    .grid6 > .col:nth-of-type(3n) {
+      margin-right: 0; } }
+
+/* grid7 ::  posts-feed at bottom of single-post
+*/
+.grid7:after {
+  content: "";
+  display: table;
+  clear: both; }
+.grid7 > .col {
+  float: none; }
+@media (min-width: 580px) and (max-width: 939px) {
+  .grid7 {
+    /* 2col */ }
+    .grid7 > .col {
+      float: left;
+      width: 49%;
+      margin-right: 2%; }
+      .grid7 > .col:nth-of-type(even) {
+        margin-right: 0; } }
+@media (min-width: 940px) {
+  .grid7 {
+    /* 3col */ }
+    .grid7 > .col {
+      float: left;
+      width: 31.3%;
+      margin-right: 2%; }
+      .grid7 > .col:nth-of-type(3n) {
+        margin-right: 0; } }
+
+/* grid8
+*/
+.grid8:after {
+  content: "";
+  display: table;
+  clear: both; }
+.grid8 .col2 {
+  display: none; }
+@media (min-width: 900px) {
+  .grid8 .col1 {
+    float: left;
+    width: 65.9%; }
+  .grid8 .col2 {
+    display: block;
+    float: right;
+    width: 27%; } }
+@media (min-width: 1200px) {
+  .grid8 .col1 {
+    float: left;
+    width: 72.25%; }
+  .grid8 .col2 {
+    display: block;
+    float: right;
+    width: 23%; } }
+
+/* grid9
+*/
+.grid9:after {
+  content: "";
+  display: table;
+  clear: both; }
+.grid9 .col {
+  float: none; }
+  @media (min-width: 800px) {
+    .grid9 .col {
+      float: left;
+      width: 48%;
+      margin-right: 4%; }
+      .grid9 .col:nth-of-type(2n) {
+        margin-right: 0; } }
+
+/* grid10
+*/
+.grid10:after {
+  content: "";
+  display: table;
+  clear: both; }
+.grid10 > .col {
+  width: 49%;
+  margin-right: 2%; }
+  .grid10 > .col:nth-of-type(2n) {
+    margin-right: 0; }
+@media (min-width: 800px) {
+  .grid10 {
+    float: right;
+    width: 45%; } }
+@media (min-width: 900px) {
+  .grid10 {
+    float: right;
+    width: 50%; } }
+
+/* grid11
+*/
+.grid11 {
+  /* create 2 columns */
+  /* when we're at full size */ }
+  .grid11:after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media (min-width: 575px) {
+    .grid11 .post {
+      width: 48%;
+      margin: 0 2% 19px 0;
+      padding-bottom: 31.948%; }
+      .grid11 .post.magazine {
+        /* padding-bottom: (($posts-normal/100%) * $g11-b1-width)*2; */
+        /* padding-bottom: calc(63.896% + 19px); */ }
+      .grid11 .post.featured {
+        width: 98%;
+        margin-right: 0; } }
+  @media (min-width: 800px) {
+    .hidecol2 .grid11 .post {
+      width: 31.33333333333333%;
+      padding-bottom: 20.4293333333%; }
+      .hidecol2 .grid11 .post.featured {
+        width: 98%;
+        padding-bottom: 40.8586666667%; } }
+  @media (min-width: 1000px) {
+    .hidecol2 .grid11 .post {
+      width: 32.33333333333333%;
+      padding-bottom: 21.0813333333%;
+      margin-right: 1%; }
+      .hidecol2 .grid11 .post.featured {
+        width: 98.99999999999999%;
+        padding-bottom: 21.0813333333%; } }
+
+/* grid12
+*/
+.grid12:after {
+  content: "";
+  display: table;
+  clear: both; }
+.grid12 > .col2 {
+  display: none; }
+@media (min-width: 900px) {
+  .grid12 > .col1 {
+    float: left;
+    width: 64.8%;
+    width: 66.6%; }
+  .grid12 > .col2 {
+    display: block;
+    float: right;
+    width: 33.4%; } }
+.grid12.hidecol2 > .col1 {
+  width: 100%; }
+.grid12.hidecol2 > .col2 {
+  display: none; }
+
+/* grid13
+*/
+.grid13:after {
+  content: "";
+  display: table;
+  clear: both; }
+@media (min-width: 900px) {
+  .grid13 .col1 {
+    float: left;
+    width: 65.8%; }
+  .grid13 .col2 {
+    float: right;
+    width: 31.8%; } }
+
+/* grid14
+*/
+.grid14:after {
+  content: "";
+  display: table;
+  clear: both; }
+.grid14 .col {
+  float: none; }
+@media (min-width: 670px) and (max-width: 900px) {
+  .grid14 .col {
+    float: left;
+    width: 49%;
+    margin-right: 2%; }
+    .grid14 .col:nth-of-type(even) {
+      margin-right: 0; } }
+
+/* grid15
+*/
+.grid15:after {
+  content: "";
+  display: table;
+  clear: both; }
+.grid15 .col {
+  float: none; }
+@media (min-width: 580px) {
+  .grid15 .col {
+    float: left;
+    width: 49%;
+    margin-right: 2%;
+    padding-bottom: 31.948%; }
+    .grid15 .col:nth-of-type(2n) {
+      margin-right: 0; } }
+@media (min-width: 900px) {
+  .grid15 .col {
+    width: 32.66666666666667%;
+    padding-bottom: 21.2986666667%;
+    margin-right: 1%; }
+    .grid15 .col:nth-of-type(2n) {
+      margin-right: 1%; }
+    .grid15 .col:nth-of-type(3n) {
+      margin-right: 0; } }
+
+/* grid16
+*/
+.grid16:after {
+  content: "";
+  display: table;
+  clear: both; }
+.grid16 .col {
+  float: none; }
+@media (min-width: 590px) and (max-width: 900px) {
+  .grid16 .col {
+    float: left;
+    width: 48.75%;
+    margin-right: 2.5%; }
+    .grid16 .col:nth-of-type(3n) {
+      margin-right: 0; }
+    .grid16 .col.col1 {
+      width: 100%;
+      margin-right: 0; } }
+@media (min-width: 900px) {
+  .grid16 .col {
+    float: left;
+    width: 31.66666666666667%;
+    margin-right: 2.5%; }
+    .grid16 .col:nth-of-type(3n) {
+      margin-right: 0; } }

@@ -1,0 +1,57 @@
+.destination {
+	
+	.page-guide {
+		color: $grey-med-1;
+		font-style: italic;
+	}
+	
+	@media #{$b-900} {
+		.page-guide, .page-title {
+			margin-left: 11.9%;
+		}
+		
+		.page-guide {
+			font-size: 25px;
+		}
+	}
+
+	.share-the-destination {
+		display: none; padding-top: 8px;
+		
+		.share-title {
+			margin-bottom: 0; margin-right: 7px; font-style: normal;
+		}
+		
+		.share-title, ul, li {
+			display: inline-block; line-height: 21px; vertical-align: middle;
+		}
+		
+		@media (min-width: 600px) {
+			display: block; float: right;
+		}
+		
+		@media #{$b-900} {
+			margin-right: 11.9%;
+		}
+		
+		@media (min-width: 1000px) {
+			padding-top: 29px;
+		}
+	}
+	
+	.filter-menu {
+		margin: 0 0 $jump;
+	}
+	
+	.map {
+		position: relative; height: 600px;
+		
+		#map-canvas {
+			height: 100%; margin: 0; padding: 0;
+		}
+		
+		&.floating {
+			position: fixed; top: 0;
+		}
+	}
+}

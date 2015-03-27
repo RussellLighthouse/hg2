@@ -1,0 +1,334 @@
+.hedonist-menu, .filter-menu {
+	position: relative;
+	z-index: 10;
+	
+	li {
+		@include head-text();
+		
+		label {
+			display: block; padding: 8px $gutter;
+			cursor: pointer;
+		}
+		
+		select {
+			display: block; width: #{(100%-($gutter*2))};
+			margin: 0 $gutter;
+			text-transform: none;
+		}
+		
+		a { 
+			display: block; padding: 8px $gutter;
+			border: 1px solid $grey-light-4;
+			color: $text;
+			transition: color $trans-quick ease, padding $trans-med ease, background $trans-quick ease, box-shadow $trans-slow ease;
+			
+			&:after {
+				position: relative; top: -2px;
+				display: inline-block; width: 8px; height: 6px; margin-left: 4px;
+				background: url('../images/icons/category-arrow.svg') right center no-repeat; background-size: cover;
+				content: "";
+				transform: rotate(-90deg);
+				transition: opacity $trans-quick ease, transform $trans-quick ease, margin $trans-med ease;
+				opacity: 0;
+			}
+			
+			&:hover, &:focus {
+				color: $link;
+			}
+		}
+		
+		ul {
+			position: absolute; left: -200%; z-index: 1;
+			width: 100%;
+			background: $white; border-bottom: 1px solid $grey-light-4;
+			opacity: 0;
+			transition: opacity $trans-quick ease;
+			
+			li {
+				border: 1px solid $grey-light-4; border-bottom: none;
+				
+				&:first-of-type {
+					border-top: 0;
+				}
+			}
+			
+			a {
+				background: $white;
+				border: none;
+				
+				&:hover, &:focus {
+					padding-left: $gutter*1.5;
+					background: $yellow-1;
+					
+					&:after {
+						margin-left: 7px;
+						
+						opacity: 1;
+					}
+				}
+			}
+			
+			
+		}
+		
+		&:hover {
+			ul {
+				left: 0;
+				opacity: 1;
+				@include box-shadow1();
+			}
+		}
+		
+		&.menu {
+			> a {
+				cursor: default;
+				
+				&:after {
+					opacity: 1;
+					transform: rotate(-90deg);
+				}
+			}
+			
+			&:hover, &:focus {
+				> a {
+					color: $grey-med-1;
+					
+					&:after {
+						opacity: .4;
+						transform: rotate(0deg) scale(.6);
+					}
+				}
+			}
+		}
+	}
+}
+
+.hedonist-menu {
+	@media (min-width: 950px) {
+		
+		margin-bottom: $jump*2;
+		
+		li {
+			&.menu {
+				> a {
+					display: none;
+				}
+			}
+			
+			ul {
+				@include clearfix();
+				position: static; opacity: 1;
+				border: 1px solid #e3e3de;
+				
+				li {
+					float: left;
+					border: none;
+					
+					a {
+						padding: 12px $gutter-px*2;
+						border-right: 1px solid #e3e3de;
+						
+						&:after {
+							margin-left: 5px;
+							opacity: 1;
+							transform: rotate(-90deg) scale(.6);
+							opacity: .4;
+						}
+						
+						&:hover, &:focus {
+							padding-left: $gutter-px*2; padding-right: $gutter-px*2;
+							background: $yellow-1;
+							
+							&:after {
+								margin-left: 5px;
+								transform: rotate(0deg);
+							}
+						}
+					}
+				}
+			}
+			
+			&:hover {
+				ul {
+					left: auto;
+					opacity: 1;
+					box-shadow: none;
+				}
+			}
+		}
+		
+	}
+}
+
+.filter-menu {
+	
+	margin: 0 0 $jump;
+	
+	li {
+		a {
+			padding-left: $gutter-px; padding-right: $gutter-px;
+		}
+		
+		li {
+			padding: 0 $gutter-px 8px;
+			
+			a {
+				padding-left: $gutter-px; padding-right: $gutter-px;
+			}
+			
+			label {
+				padding-left: 0; padding-right: 0;
+				padding-bottom: 4px;
+			}
+			
+			select {
+				margin: 0;
+				padding: 3px 0;
+				font-size: 13px;
+			}
+			
+			.selecta {
+				display: none;
+				cursor: pointer;
+				
+				&:after {
+					position: relative; top: -2px;
+					display: inline-block; width: 8px; height: 6px; margin-left: 4px;
+					background: url('../images/icons/category-arrow.svg') right center no-repeat; background-size: cover;
+					content: "";
+					transition: opacity $trans-quick ease, transform $trans-quick ease, margin $trans-med ease;
+					opacity: 1;
+				}
+			}
+		}
+	}
+	
+	@media (min-width: 950px) {
+	
+		width: 100%;
+		
+		li {
+			&.menu {
+				a { display: none; }
+			}
+			
+			
+			ul {
+				@include clearfix();
+				position: static; opacity: 1;
+				border: 1px solid #e3e3de;
+				
+				li {
+					position: relative;
+					float: left; height: 56px; padding: 7px 12px;
+					border: none; border-right: 1px solid #e3e3de;
+					overflow: hidden;
+					
+					a {
+						padding-left: $gutter-px*2; padding-right: $gutter-px*2;
+						border-right: 1px solid #e3e3de;
+						
+						&:hover, &:focus {
+							padding-left: $gutter-px*2; padding-right: $gutter-px*2;
+							background: $yellow-1;
+							
+							&:after {
+								margin-left: 5px;
+								transform: rotate(0deg);
+							}
+						}
+					}
+					
+					label, select {
+						margin: 0; width: 100%;
+					}
+					
+					label {
+						display: inline-block;
+						margin: 4px 0 5px; padding: 0;
+						color: #868679;
+					}
+					
+					select {
+						display: inline-block; position: absolute; left: 12px; max-width: 100%; opacity: 0;
+						padding: 0 0 0 3px;
+						cursor: pointer;
+					}
+					
+					.selecta {
+						display: inline-block; padding: 4px 0;
+					}
+					
+					&.filter-sort, &.filter-map {
+						float: right;
+						border-right: none; border-left: 1px solid #e3e3de;
+					}
+					
+					&.selected-all {
+						background: $grey-light-2;
+						
+						.selecta {
+							color: #b3b3ab;
+							
+							&:after {
+								opacity: .3;
+							}
+						}
+					}
+					
+					&:hover, &:focus {
+						.selecta {
+							&:after {
+								transform: scale(.6);
+							}
+						}
+					}
+					
+				}
+			}
+			
+			&:hover {
+				ul {
+					left: auto;
+					opacity: 1;
+					box-shadow: none;
+				}
+			}
+		}
+	}
+	
+	@media (min-width: 950px) and (max-width: 1199px) {
+		li {
+			ul {
+				li {
+					select {
+						top: 30px;
+					}
+				}
+			}
+		}
+	}
+	
+	@media (min-width: 1200px) {
+		li {
+			
+			ul {
+				li {
+					height: 35px;
+					
+					label, select, .selecta {
+						float: left; width: auto;
+					}
+					
+					label {
+						margin-right: 6px;
+					}
+					
+					select {
+						min-width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

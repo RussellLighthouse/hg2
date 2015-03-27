@@ -1,0 +1,171 @@
+.destinations-menu {
+	padding: $gutter-px;
+	background: $grey-light-1;
+	transition: opacity $trans-quick ease, height $trans-quick ease;
+	
+	&.showing {
+		left: 0; z-index: 30;
+		height: 100%;
+		opacity: 1;
+	}
+	
+	ul {
+		li {
+			@include head-text(); line-height: 1.6; font-size: 14px;
+			list-style-type: none; cursor: default;
+			
+			a {
+				display: block;
+			}
+
+			ul {
+				margin: 5px 0 0;
+				
+				li {
+					display: inline-block;
+					font-family: $fontwhitman; font-weight: normal; font-size: 18px; text-transform: none; white-space: nowrap;
+					
+					a {
+						color: #a8a89e;
+						
+						&:after {
+							color: #d0d0c7; content: ",\00a0";
+						}
+						
+						&:hover {
+							color: $link;
+						}
+					}
+					
+					&:last-of-type {
+						a {
+							&:after {
+								content: ".";
+							}
+						}
+					}
+				}
+				
+				
+				
+				a {
+					color: #a8a89e;
+				}
+			}
+			
+			&:hover, &:focus, &.showing {
+				color: $link; background: white;
+				
+				ul {
+					display: block;
+				}
+			}
+		}
+	}
+	
+	> ul {
+		> li {
+			margin-bottom: $jump; padding: $gutter-px*.75 $gutter-px;
+		}
+	}
+	
+	@media #{$dm-b1} {
+		> ul {
+			> li {
+				border-bottom: 1px solid $text;
+			}
+		}
+	}
+	
+	@media #{$dm-b3} { /* bring in the map and inline the continents */
+		background: url('../images/world-map.jpg') center center / cover no-repeat $grey-light-1;
+		
+		> ul {
+			width: 100%;
+			text-align: center;
+			
+			> li {
+				display: inline-block; margin: 0 1%;
+				font-size: 13px;
+				
+				ul {
+					position: absolute; left: 50%; transform: translate(-50%,0);
+					display: none; width: 94%; max-width: 960px; text-align: left;
+					
+					li {
+						font-size: 50px;
+						
+						a {
+							padding-left: 12px;
+						}
+						
+						&:last-of-type {
+							a {
+								padding-right: 8px;
+							}
+						}
+					}
+					
+					&.few {
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+	
+	@media #{$dm-b4} { /* show the '/' between each */
+		> ul {
+			> li {
+				margin-left: 0; margin-right: 0; padding: 0;
+				
+				.continent {
+					display: inline-block;
+					padding: $gutter-px*.75 $gutter-px;
+					line-height: inherit;
+				}
+				
+				&:hover, &:focus, &.showing {
+					color: $text; background: none;
+					
+					.continent {
+						color: $link-hover; background: $white;
+					}
+				}
+				
+				&:after {
+					display: inline-block; margin: 0 10px;
+					content: "\00a0/";
+					font: inherit; font-weight: normal; color: #e3e3de;
+					cursor: default;
+				}
+				
+				&:last-of-type {
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}			
+	}
+	
+	.page-destinations & {
+		position: relative;
+		min-height: 800px;
+		
+		@media #{$dm-b3} {
+			
+			> ul {
+				position: absolute; top: 7%; left: 0;
+				
+				> li {
+					
+					ul {
+						top: 250%;
+					}
+					
+				}
+			}
+		}
+	}
+}

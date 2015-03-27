@@ -1,0 +1,40 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the separate media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the rest
+of the styles inside media queries.
+******************************************************************/
+
+@import "mixins";
+@import "reset";
+
+@import "typography";
+@import "../fonts/whitman/font";
+
+@import "base";
+
+@import "header"; /*section*/
+@import "destinations-menu";
+@import "footer";
+@import "menus-hedonists-filters";
+
+@import "home"; /*template*/
+@import "destination";
+@import "venue";
+@import "single-post";
+@import "about";
+
+@import "posts-feed"; /*content type*/
+@import "related-posts"; /*content type*/
+@import "comments";
+
+@import "grid";
+
+@media print {
+	@import "print";
+}

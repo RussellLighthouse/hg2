@@ -1,0 +1,166 @@
+.posts-feed {
+	
+	.post {
+		position: relative;
+		width: 100%; height: 0; padding-bottom: $posts-normal; margin: 0 0 $jump;
+		background: $grey-med-1;
+		list-style-type: none; overflow: hidden;
+		
+		/* magazine
+		*/
+		&.magazine {
+			@include gradient-background();
+			
+			.post-category, .title {
+				background: $grey-med-15;
+			}
+			
+			.post-category {
+				a {
+					color: #c64983;
+				}
+			}
+			
+			.title {
+				color: $white;
+			}
+			
+			&:hover, &:focus {
+				
+				.post-category {
+					a {
+						color: #d7a3d2;
+					}
+				}
+				
+				.post-thumb {
+					opacity: .22;
+				}
+				
+			}
+			
+			&.featured {
+				&:after {
+					background-color: #c64983;
+				}
+			}
+		}
+		
+		/* featured post
+		*/
+		&.featured {
+			
+			.title {
+				font-size: 21px;
+			}
+			
+			&:after {
+				position: absolute; top: 0; right: 0;
+				padding: 0 10px 0 28px;
+				background: url('../images/icons/featured.svg') 8px center no-repeat $orange3; background-size: 13px auto;
+				font: bold 13px/2 $fontbrandon; color: white; content: "Featured"; text-transform: uppercase;
+				z-index: 1; cursor: default;
+			}
+		}
+	}
+	
+	.post-link {
+		display: block;
+	}
+	
+	.post-thumb {
+		position: absolute; top: 50%; left: 0;
+		width: 100%; min-height: 100%;
+		transform: translate(0,-50%);transition: opacity $trans-quick ease;
+	}
+	
+	.post-caption {
+		position: absolute; bottom: 0; left: 0; max-width: 83%; z-index: 1;
+	}
+	
+	.post-category, .title {
+		float: left; padding: $gutter-px $gutter-px*2 $gutter-px $gutter-px;
+		background: $white;
+	}
+	
+	.post-category {
+		@include sub-text();
+		padding-bottom: 0;
+		
+		a {
+			color: $grey-med-1;
+			
+			&:after {
+				display: inline-block;  margin: 0 6px 0;
+				content: "/";
+				font: inherit; color: $grey-med-1;
+			}
+			
+			&:hover, &:focus {
+				color: $link;
+			}
+			
+			&:last-of-type {
+			
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+	
+	.title {
+		font-size: 18px; color: $text; line-height: 1.3;
+		clear: left;
+		
+		&:hover, &:focus {
+			color: $link;
+		}
+	}
+	
+	
+	&.text-focus {
+		.post {
+			@include clearfix();
+			height: auto; padding-bottom: 0;
+			background: none;
+		}
+		
+		.post-caption {
+			position: static;
+			float: right; width: 70%;
+			@include clearfix();
+		}
+		
+		.post-category, .title {
+			position: static;
+			padding: 0;
+		}
+		
+		.post-category {
+			margin: 0 0 5px;
+			
+			a {
+				color: #c64983;
+			}
+		}
+		
+		.post-thumb {
+			position: static;
+			float: left; width: 25%;
+		}
+		
+		@media (min-width: 900px) {
+			.title {
+				font-size: 22px;
+			}
+		}
+		
+		@media (min-width: 1200px) {
+			.title {
+				font-size: 24px;
+			}
+		}
+	}
+
+}

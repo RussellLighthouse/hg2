@@ -1,0 +1,144 @@
+@import 'mixins';
+
+$fontbrandon: 'brandon-grotesque', 'Brandon Grotesque', Helvetica, Arial, sans-serif;
+$fontwhitman: Whitman, Georgia, Helvetica, Arial, serif;
+
+
+
+html, body { font: 15px/1.53 $fontwhitman; color: $text; }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, p, ul, ol {
+	text-rendering: optimizelegibility;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	font-weight: normal;
+}
+
+h1, .h1 {
+	font-size: 26px; line-height: 1.36;
+}
+
+h2, .h2 {
+	font-size: 22px; line-height: 1.36;
+}
+
+h3, .h3 {
+	font-size: 19px; line-height: 1.36;
+}
+
+.page-title {
+	margin: 0 0 $jump;
+	display: inline-block;
+	font-size: 30px;
+	border-bottom: 1px solid $grey-dark-1;
+	
+	a {
+		color: $text;
+		
+		&:hover, &:focus {
+			color: $link-hover;
+		}
+	}
+	
+	&.page-title-sub {
+		margin: 0 0 $jump;
+		font-size: 26px;
+	}
+}
+
+a {
+	color: $link;
+	transition: color $trans-quick ease;
+	
+	&:hover, &:focus {
+		color: $link-hover;
+	}
+	
+	&:link {
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+
+.content {
+	
+	> * + * {
+		margin: $jump 0;
+	}
+	
+	h1, .h1, h2, .h2, h3, .h4, h4, .h4 {
+		+ {
+			h1, .h1, h2, .h2, h3, .h4, h4, .h4 {
+				margin-top: $jump/2;
+			}
+		}
+	}
+	
+	li {
+		
+		& + li { margin: $jump*.33 0; }
+		
+		ul, ol { margin: $jump/2 0; }
+		
+		li {  }
+		
+		&:hover, &:focus {
+			/* background-image: url('../images/bullet-filled-large.png'); */
+		}
+	}
+	
+	p, li, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+		a {
+		transition: color, background, opacity;
+	
+			&:hover, &:focus {
+				padding: 2px 0;
+				background: $yellow-1;
+				box-shadow: 0 1px 0 rgba($grey-light-4, .25); border-radius: 2px;
+				
+			}
+		}
+	}
+}
+
+@media (min-width: 900px) {
+	body {
+		font-size: 17px;
+	}
+	
+	.page-title {
+		font-size: 42px;
+		
+		&.page-title-sub {
+			font-size: 32px;
+		}
+	}
+	
+	h1, .h1 {
+		font-size: 36px; line-height: 1.36;
+	}
+	
+	h2, .h2 {
+		font-size: 28px; line-height: 1.36;
+	}
+	
+	h3, .h3 {
+		font-size: 23px; line-height: 1.36;
+	}
+}
+
+@media (min-width: 1000px) {
+	body {
+		font-size: 18px;
+	}
+	
+	.page-title {
+		font-size: 56px;
+		margin-bottom: $jump*2.5;
+		
+		&.page-title-sub {
+			font-size: 42px;
+		}
+	}
+}
